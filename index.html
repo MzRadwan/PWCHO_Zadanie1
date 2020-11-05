@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Czas na swiecie</title>
+
+
+    <style>
+      body{
+        color: #2c3340;
+        background-color: #2c3340;
+        font-family: "Lucida Console", Courier, monospace;
+        text-align: center;
+
+      }
+      h1{
+        color: 2c3340;
+        background-color: #d6beb8;
+        border-radius: 10px;
+        margin: 10px;
+        margin-top: 50px;
+        padding: 10px
+      }
+      div.zone{
+        background-color:#8595a8;
+         font-size: 30px;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 10px;
+      }
+
+      div.zone:hover{
+        opacity: 0.75;
+      }
+
+      footer{
+        background-color: #d6beb8;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 10px;
+      }
+
+    </style>
+   
+  </head>
+  <body>
+<h1>Czas na świecie:</h1>
+
+<div id="d0">
+  <div id="d1" class="zone"></div>
+  <div id="d2" class="zone"></div>
+  <div id="d3" class="zone"></div>
+</div>
+<script>
+function displayTime(){
+let options = {
+        timeZone: 'Europe/Warsaw',
+        hour: 'numeric',
+        minute: 'numeric',
+
+        second: 'numeric',
+        day: 'numeric',
+        month: 'numeric',
+        year: 'numeric',
+
+      },
+        lublin = new Intl.DateTimeFormat([], options);
+        options.timeZone='America/New_York';
+        ny = new Intl.DateTimeFormat([], options);
+        options.timeZone='Australia/Sydney';
+        sydney = new Intl.DateTimeFormat([], options);
+
+  document.getElementById("d1").innerHTML = "NOWY JORK<br><br>" + ny.format(new Date());
+  document.getElementById("d2").innerHTML = "LUBLIN<br><br>" + lublin.format(new Date());
+  document.getElementById("d3").innerHTML = "SYDNEY<br><br>" + sydney.format(new Date());
+  }
+
+	setInterval(function() {displayTime(); }, 500); 
+</script>
+<footer>
+Dominika Radwan
+</footer>
+
+      </body>
+</html>
