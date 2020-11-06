@@ -2,8 +2,9 @@
 1B
 Do budowy obrazu docker trzeba uzyc polecenia:
 
-docker build https://github.com/MzRadwan/PWCHO_Zadanie1.git
-
+'''
+$ docker build https://github.com/MzRadwan/PWCHO_Zadanie1.git
+'''
 2B
 Polecenie:
 
